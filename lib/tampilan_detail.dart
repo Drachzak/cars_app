@@ -5,29 +5,25 @@ import 'package:flutter/material.dart';
 
 class ScreenDetail extends StatelessWidget {
   late final Mobil cars;
+
   ScreenDetail({required this.cars});
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder:
-    (BuildContext context, BoxConstraints constraint) {
+    return LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraint) {
       if (constraint.maxWidth > 800) {
-        return TampilanDetailGrid(
-          detailsmobil: cars,
-        );
+        return TampilanDetailWeb(detailsmobil: cars);
       } else {
-        return TampilanDetail(
-          detailmobil: cars,
-        );
+        return TampilanDetail(detailmobil: cars);
       }
     });
   }
 }
 
-
-
 class TampilanDetail extends StatelessWidget {
   late final Mobil detailmobil;
+
   TampilanDetail({required this.detailmobil});
 
   @override
@@ -79,39 +75,26 @@ class TampilanDetail extends StatelessWidget {
                               onPressed: () {
                                 Navigator.pop(context);
                               },
-                              icon: Icon(Icons.arrow_back,color: Colors.black,),
+                              icon: Icon(
+                                Icons.arrow_back,
+                                color: Colors.black,
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                   ),
-
                 ],
               ),
               FavButton(),
-              // Container(
-              //   height: 150,
-              //   child: ListView(
-              //       scrollDirection: Axis.horizontal,
-              //       children: detailmobil.imageUrl.map((urlgambar){
-              //         return Padding(padding: EdgeInsets.all(4),
-              //           child: ClipRRect(
-              //             borderRadius: BorderRadius.circular(10),
-              //             child: Image.network(urlgambar),
-              //           ),
-              //         );
-              //       }).toList()
-              //   ),
-              // ),
-
               Container(
-                  margin: EdgeInsets.only(top: 8),
-                  child: Text(
-                    detailmobil.merk,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 35, fontFamily: 'Poppins'),
-                  ),
+                margin: EdgeInsets.only(top: 8),
+                child: Text(
+                  detailmobil.merk,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 35, fontFamily: 'Poppins'),
+                ),
               ),
               Container(
                 margin: EdgeInsets.symmetric(vertical: 8),
@@ -125,7 +108,10 @@ class TampilanDetail extends StatelessWidget {
                           children: <Widget>[
                             Icon(Icons.monetization_on),
                             SizedBox(height: 8),
-                            Text(detailmobil.harga,style: TextStyle(fontFamily: 'Poppins'),),
+                            Text(
+                              detailmobil.harga,
+                              style: TextStyle(fontFamily: 'Poppins'),
+                            ),
                           ],
                         ),
                         Column(
@@ -138,7 +124,10 @@ class TampilanDetail extends StatelessWidget {
                             SizedBox(
                               height: 8,
                             ),
-                            Text(detailmobil.tipe,style: TextStyle(fontFamily: 'Poppins'),)
+                            Text(
+                              detailmobil.tipe,
+                              style: TextStyle(fontFamily: 'Poppins'),
+                            )
                           ],
                         ),
                         Column(
@@ -151,7 +140,10 @@ class TampilanDetail extends StatelessWidget {
                             SizedBox(
                               height: 8,
                             ),
-                            Text(detailmobil.dibuatdi,style: TextStyle(fontFamily: 'Poppins'),)
+                            Text(
+                              detailmobil.dibuatdi,
+                              style: TextStyle(fontFamily: 'Poppins'),
+                            )
                           ],
                         )
                       ],
@@ -162,7 +154,7 @@ class TampilanDetail extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(top: 8),
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 16,left: 16),
+                  padding: const EdgeInsets.only(right: 16, left: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -180,16 +172,19 @@ class TampilanDetail extends StatelessWidget {
                       Text(
                         detailmobil.desc,
                         textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 15, fontFamily: 'Poppins',color: Colors.grey),
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontFamily: 'Poppins',
+                            color: Colors.grey),
                       ),
                     ],
                   ),
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(top: 8,bottom: 8),
+                margin: EdgeInsets.only(top: 8, bottom: 8),
                 child: Padding(
-                  padding: const EdgeInsets.only(right: 16,left: 16),
+                  padding: const EdgeInsets.only(right: 16, left: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -209,7 +204,10 @@ class TampilanDetail extends StatelessWidget {
                       Text(
                         detailmobil.spesifikasi,
                         textAlign: TextAlign.start,
-                        style: TextStyle(fontSize: 15, fontFamily: 'Poppins',color: Colors.grey),
+                        style: TextStyle(
+                            fontSize: 15,
+                            fontFamily: 'Poppins',
+                            color: Colors.grey),
                       ),
                     ],
                   ),
@@ -222,6 +220,7 @@ class TampilanDetail extends StatelessWidget {
     );
   }
 }
+
 class FavButton extends StatefulWidget {
   const FavButton({Key? key}) : super(key: key);
 
@@ -230,15 +229,19 @@ class FavButton extends StatefulWidget {
 }
 
 class _FavButtonState extends State<FavButton> {
-
   bool isFavorite = false;
+
   @override
   Widget build(BuildContext context) {
-    return IconButton(icon: Icon (isFavorite? Icons.favorite : Icons.favorite_border,color: Colors.red,),
-        onPressed: (){
+    return IconButton(
+        icon: Icon(
+          isFavorite ? Icons.favorite : Icons.favorite_border,
+          color: Colors.red,
+        ),
+        onPressed: () {
           setState(() {
             isFavorite = !isFavorite;
-          });}
-    );
+          });
+        });
   }
 }

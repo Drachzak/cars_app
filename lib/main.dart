@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Mobil',
+      title: 'Mobil App',
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
       home: Screen(),

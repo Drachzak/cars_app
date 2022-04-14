@@ -13,7 +13,7 @@ class ListMobil extends StatelessWidget {
           return InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return TampilanDetail(detailmobil: cars);
+                return ScreenDetail(cars: cars);
               }));
             },
             child: ClipRRect(
