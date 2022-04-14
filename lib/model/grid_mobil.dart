@@ -1,15 +1,15 @@
-import 'package:cars_app/model/data_mobil.dart';
-import 'package:cars_app/tampilan_detail.dart';
-import 'package:cars_app/tampilan_detail_grid.dart';
 import 'package:flutter/material.dart';
+import '../tampilan_detail.dart';
+import 'data_mobil.dart';
 
 class GridMobil extends StatelessWidget {
 
   late final int gridcount;
   GridMobil({required this.gridcount});
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
       margin: EdgeInsets.all(16),
       child: GridView.count(
         crossAxisCount: gridcount,
@@ -25,8 +25,8 @@ class GridMobil extends StatelessWidget {
             },
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10), color: Colors.black,
-              border: Border.all(width: 16)),
+                  borderRadius: BorderRadius.circular(10), color: Colors.white,
+                  border: Border.all(width: 16)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
@@ -37,7 +37,6 @@ class GridMobil extends StatelessWidget {
                         cars.imageasset,
                         fit: BoxFit.cover,
                       ),
-                      borderRadius: BorderRadius.circular(10),
                     ),
                   ),
                   SizedBox(height: 8),
@@ -54,7 +53,7 @@ class GridMobil extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 fontFamily: 'Poppins',
                                 fontSize: 16,
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                             ),
                           ),
@@ -67,7 +66,7 @@ class GridMobil extends StatelessWidget {
                               style: TextStyle(
                                 fontFamily: 'Poppins',
                                 fontSize: 16,
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                             ),
                           ),

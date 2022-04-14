@@ -1,4 +1,4 @@
-import 'package:cars_app/grid_mobil.dart';
+import 'package:cars_app/model/grid_mobil.dart';
 import 'package:cars_app/list_mobil.dart';
 import 'package:cars_app/model/data_mobil.dart';
 import 'package:cars_app/tampilan_detail.dart';
@@ -58,12 +58,12 @@ class TampilanUtama extends StatelessWidget {
                     left: 20,
                     child: RichText(
                       text: TextSpan(
-                          text: "What a nice day\nfor looking for some cars",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: 'Poppins',
-                              fontSize: 25),
-                          children: []),
+                        text: "What a nice day\nfor looking for some cars",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Poppins',
+                            fontSize: 25),
+                      ),
                     ),
                   )
                 ],
@@ -116,7 +116,6 @@ class TampilanUtama extends StatelessWidget {
                           ),
                         ],
                       )),
-                  // child: ListMobil(),
                 ),
               )
             ],
